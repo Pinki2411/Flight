@@ -1,0 +1,69 @@
+﻿@model flightWebApplication1.Models.Flight
+
+@{
+    ViewBag.Title = "Search";
+}
+
+
+
+@using (Html.BeginForm("SearchResult", "Flight", FormMethod.Get))
+{
+    @Html.ValidationSummary(false)
+    <div style="border-bottom:1px solid #bbb"><h1>Search Flight</h1></div>
+    <table style="border:0px; width:500px;">
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.From)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.From)
+                    @Html.ValidationMessageFor(model => model.From)
+                </div>
+            </td>
+
+        <tr>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.To)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.To)
+                    @Html.ValidationMessageFor(model => model.To)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                   @Html.LabelFor(model => model.DateAndTime)
+                            </div>
+                            </td>
+                        <td>
+
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.DateAndTime)),
+                                @Html.ValidationMessageFor(model => model.DateAndTime)
+                    <!--<div class="form-group">
+                        @Html.LabelFor(m => m.DateAndTime)
+                        <input type="date" "min" =2022-12-21" />-->
+                        @*@Html.TextBoxFor(m => m.DateAndTime, "", new { @class = "form-control", @placeholder = "DateOfBirth", Type = "Date" })*@
+                        <!--@Html.ValidationMessageFor(m => m.DateAndTime, "", new { @class = "badge badge-danger" })
+                    </div>-->
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:bottom;">
+                <input name="SearchButton" type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+    }
